@@ -62,6 +62,26 @@ const AdminSidebar = () => {
           </Link>
         </li>
         <li className="nav-item">
+          <Link href="/login">
+          <a className="nav-link">
+            
+            <p>
+              login
+              
+            </p>
+          </a>
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link href="/register">
+          <a className="nav-link">
+            <p>
+              Register
+            </p>
+          </a>
+          </Link>
+        </li>
+        <li className="nav-item">
         <Link href='#'>
           <a className="nav-link">
             <i className="nav-icon fas fa-copy" />

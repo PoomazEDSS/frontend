@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/dist/client/link'
 
 export default function login() {
     return (
@@ -15,13 +16,15 @@ export default function login() {
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
   <div className="login-box">
     <div className="login-logo">
-      <a href="../../index2.html"><b>Admin</b>LTE</a>
+     
+    <h1><p>Admin.JS</p></h1>
     </div>
     {/* /.login-logo */}
     <div className="card">
       <div className="card-body login-card-body">
-        <p className="login-box-msg">Sign in to start your session</p>
-        <form action="../../index3.html" method="post">
+       <h3> <p className="login-box-msg">Signin to start your session</p></h3>
+        
+        <form action="/" method="post">
           <div className="input-group mb-3">
             <input type="email" className="form-control" placeholder="Email" />
             <div className="input-group-append">
@@ -49,26 +52,24 @@ export default function login() {
             </div>
             {/* /.col */}
             <div className="col-4">
-              <button type="submit" className="btn btn-primary btn-block">Sign In</button>
+              <button type="submit" className="btn btn-dark">SignIn</button>
             </div>
             {/* /.col */}
           </div>
+          
         </form>
-        <div className="social-auth-links text-center mb-3">
-          <p>- OR -</p>
-          <a href="#" className="btn btn-block btn-primary">
-            <i className="fab fa-facebook mr-2" /> Sign in using Facebook
-          </a>
-          <a href="#" className="btn btn-block btn-danger">
-            <i className="fab fa-google-plus mr-2" /> Sign in using Google+
-          </a>
-        </div>
+       
+        
         {/* /.social-auth-links */}
         <p className="mb-1">
-          <a href="forgot-password.html">I forgot my password</a>
-        </p>
-        <p className="mb-0">
-          <a href="/register" className="text-center">Register a new membership</a>
+        <Link href="/register">
+                  <a className="nav-link">
+                  <p>
+                  Register a new membership
+                  </p>
+                  </a>
+                </Link>
+        
         </p>
       </div>
       {/* /.login-card-body */}

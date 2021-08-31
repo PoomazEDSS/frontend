@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/dist/client/link'
 
 export default function register() {
     return (
@@ -14,12 +15,12 @@ export default function register() {
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css" />
   <div className="register-box">
     <div className="register-logo">
-      <a href="../../index2.html"><b>Admin</b>LTE</a>
+     <h1><p>Admin.JS</p></h1>
     </div>
     <div className="card">
       <div className="card-body register-card-body">
-        <p className="login-box-msg">Register a new membership</p>
-        <form action="../../index.html" method="post">
+       <h3> <p className="login-box-msg">Register a new membership</p></h3>
+        <form action="/login" method="post">
           <div className="input-group mb-3">
             <input type="text" className="form-control" placeholder="Full name" />
             <div className="input-group-append">
@@ -63,23 +64,19 @@ export default function register() {
             </div>
             {/* /.col */}
             <div className="col-4">
-              <button type="submit" className="btn btn-primary btn-block">Register</button>
+              <button type="submit" className="btn btn-dark">Register</button>
             </div>
             {/* /.col */}
           </div>
         </form>
-        <div className="social-auth-links text-center">
-          <p>- OR -</p>
-          <a href="#" className="btn btn-block btn-primary">
-            <i className="fab fa-facebook mr-2" />
-            Sign up using Facebook
-          </a>
-          <a href="#" className="btn btn-block btn-danger">
-            <i className="fab fa-google-plus mr-2" />
-            Sign up using Google+
-          </a>
-        </div>
-        <a href="login.html" className="text-center">I already have a membership</a>
+       
+        <Link href="/login">
+                  <a className="nav-link">
+                  <p>
+                  I already have a user account
+                  </p>
+                  </a>
+                </Link>
       </div>
       {/* /.form-box */}
     </div>{/* /.card */}
