@@ -112,5 +112,5 @@ const addMember = () => {
         </div>
     )
 }
-
+//2
 export default Register;
