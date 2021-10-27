@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import AdminHOC from "./components/layouts/admin.hoc";
+import AdminHOC from "../components/layouts/admin.hoc";
 
 import axios from "axios";
 
@@ -68,8 +68,8 @@ const Users = ({ users , error }) => {
                             <td>{data.lastname}</td>
                             <td>{data.username}</td>
                             <td>ไม่บอก</td>
-                            <td>แก้ไข</td>
-                            <td>ลบ</td>
+                            <td><Link href={`/users/edit/${data.id}`}><a className="btn btn-warning"> แก้ไข</a></Link></td>
+                            <td><Link href="/edit"><a className="red"> ลบ</a></Link></td>
                           </tr>
                         ))}
 
@@ -95,8 +95,7 @@ const Users = ({ users , error }) => {
         </div>
         {/* /.content-wrapper */}
 
-        /.content-wrapper
-        jQuery
+        
         <script src="/plugins/jquery/jquery.min.js"></script>
         {/* Bootstrap 4 */}
         <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -153,7 +152,7 @@ const Users = ({ users , error }) => {
 
 Users.getInitialProps = async ctx => {
   try {
-    const res = await axios.get('http://localhost:1337/members');
+    const res = await axios.get('https://api-itcmtc.herokuapp.com/members');
     const users= res.data;
     return { users };
   } catch (error) {

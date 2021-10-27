@@ -1,56 +1,27 @@
-import React from 'react'
-import Link from 'next/link'
-import Axios from 'axios';
+import React from "react";
+import Head from "next/head";
+import Link from "next/link";
+import AdminHOC from "../../components/layouts/admin.hoc";
 import { useState } from 'react'; //เก็บข้อมูลไว้ในตัวแปร state
 import Swal from 'sweetalert2'
-const Register = () => {
+import Axios from 'axios';
+import axios from "axios";
 
-//if (error) {
-//   return <div>An error occured: {error.message}</div>;
-//}
-const [firstname, setfirstName] = useState("");
-const [lastname, setlastName] = useState("");
-const [username, setuserName] = useState("");
-const [password, setPassword] = useState("");
 
-const addMember = () => {
-  Axios.post('https://api-itcmtc.herokuapp.com/members', {
-      firstname: firstname,
-      lastname: lastname,
-      username: username,
-      password: password
-
-})
-.then(function (response) {
-  console.log(response);
-  Swal.fire({
-      icon: 'success',
-      title: '<h3>บันทึกข้อมูลเรียบร้อยแล้ว</h3>',
-      showConfirmButton: false,
-      timer: 2000
-  }).then(function () {
-      window.location = "./";
-  });
-})
-.catch(function (error) {
-  console.log(error);
-  Swal.fire({
-      title: 'Error!',
-      text: 'เกิดข้อผิดพลาด!',
-      icon: 'error',
-      confirmButtonText: 'ตกลง'
-  })
-});
-}
-    return (
-        <div>
-          <body class="hold-transition register-page">
+const Edituser = ({ users , error }) => {
+  if (error) {
+    return <div>An error occured: {error.message}</div>;
+  }
+  return (
+    <div>
+      
+      <body class="hold-transition register-page">
 <div className="register-box">
   <div className="card">
     <div className="card-body register-card-body">
-      <p className="login-box-msg">สมัครสมาชิก</p>
+      <p className="login-box-msg">หน้าแก้ไข</p>
       <form action="/" method="post">
-        <div className="input-group mb-3">
+      <div className="input-group mb-3">
           <input type="text" className="form-control" placeholder="ชื่อ" onChange={(event) => { setfirstName(event.target.value) }} />
           <div className="input-group-append">
             <div className="input-group-text">
@@ -95,7 +66,7 @@ const addMember = () => {
         </div>
       </form>
       <div className="social-auth-links text-center">
-      <button type="button" class="btn btn-success" onClick={addMember}>บันทึก</button>
+      <button type="button" class="btn btn-success" >แก้ไขสมาชิก</button>
       <br />
         <Link href="/login">
       <a className="text-center">ฉันมีบัญชีอยู่แล้ว</a>
@@ -109,8 +80,18 @@ const addMember = () => {
 
 </body>
 
-        </div>
-    )
-}
-//2
-export default Register;
+      
+    </div>
+  );
+};
+
+Edituser.getInitialProps = async ctx => {
+  try {
+    const res = await axios.get('http://localhost:1337/members');
+    const users= res.data;
+    return { users };
+  } catch (error) {
+    return { error };
+  }
+};
+export default Edituser;
