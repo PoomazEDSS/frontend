@@ -1,3 +1,4 @@
+import Link from 'next/link';
 const AdminHeader = () => {
   return (
    <div>
@@ -18,16 +19,23 @@ const AdminHeader = () => {
             <i className="fas fa-bars" />
           </a>
         </li>
-        <li className="nav-item d-none d-sm-inline-block">
-          <a href="index3.html" className="nav-link">
-            Home
+        <Link href='/'>
+          <a className="nav-link active">
+            
+            <p>
+              home
+            </p>
           </a>
-        </li>
-        <li className="nav-item d-none d-sm-inline-block">
-          <a href="#" className="nav-link">
+        </Link>
+        
+        <Link href='/users'>
+          <a className="nav-link active">
+            
+            <p>
             Contact
+            </p>
           </a>
-        </li>
+        </Link>
       </ul>
       {/* Right navbar links */}
       <ul className="navbar-nav ml-auto">
