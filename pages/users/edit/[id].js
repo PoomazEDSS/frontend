@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import AdminHOC from '../../components/layouts/admin.hoc'
+import AdminHOC from '../../../components/layouts/admin.hoc'
 import { useState } from 'react'; //เก็บข้อมูลไว้ในตัวแปร state
 import Swal from 'sweetalert2'
 import axios from 'axios'

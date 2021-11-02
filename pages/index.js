@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import AdminHOC from "./components/layouts/admin.hoc";
+import AdminHOC from "../components/layouts/admin.hoc";
 const Home = () => {
   return (
     <div>
