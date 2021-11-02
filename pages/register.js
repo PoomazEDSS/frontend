@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Axios from 'axios';
 import { useState } from 'react'; //เก็บข้อมูลไว้ในตัวแปร state
 import Swal from 'sweetalert2'
+
 const Register = () => {
 
 //if (error) {
@@ -44,7 +45,7 @@ const addMember = () => {
 }
     return (
         <div>
-          <body class="hold-transition register-page">
+          <body className="hold-transition register-page">
 <div className="register-box">
   <div className="card">
     <div className="card-body register-card-body">
@@ -95,7 +96,7 @@ const addMember = () => {
         </div>
       </form>
       <div className="social-auth-links text-center">
-      <button type="button" class="btn btn-success" onClick={addMember}>บันทึก</button>
+      <button type="button" className="btn btn-success" onClick={addMember}>บันทึก</button>
       <br />
         <Link href="/login">
       <a className="text-center">ฉันมีบัญชีอยู่แล้ว</a>
@@ -112,5 +113,5 @@ const addMember = () => {
         </div>
     )
 }
-//2
+
 export default Register;
